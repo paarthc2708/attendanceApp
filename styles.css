@@ -116,20 +116,205 @@ i{
     height: 10px;
     background-color: #F98282;
 }
-.OverviewChartContainer{
+.OverviewChartBars{
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     gap: 10px;
 }
-@media (max-width: 800px){
-    .Navbar{
-        flex-direction: row;
-        height: 50px;
-        min-width: 700px;
+.AttendanceOverview{
+    margin-top: 10px;
+    font-size: 13px;
+    color: #555C6A;
+    width: 90px;
+}
+.GreenZone{
+    color: #71C4B0;
+    font-weight: bold;
+}
+.AttendanceLogsSection{
+    background-color: white;
+    margin-top: 25px;
+    padding: 25px;
+    width: 100%;
+}
+.AttendanceLogsTitle{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.AttendanceTable{
+    width: 75%;
+    border: solid 2px black;
+}
+.AttendanceTable th{
+    border: solid 1px black;
+    padding: 8px;
+    text-align: left;
+}
+.AttendanceTable td{
+    color: #555C6A;
+    font-size: 12px;
+    border: solid 1px black;
+    padding: 8px;
+    text-align: left;
+}
+.LeaveApplicationSection{
+    background-color: white;
+    margin-top: 25px;
+    padding: 25px;
+    width: 100%;
+}
+.LeaveApplicationTitle{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.LeaveApplicationForm{
+    display: flex;
+    flex-direction: column;
+}
+.LeaveApplicationForm label{
+    font-size: 13px;
+    margin-bottom: 15px;
+    color: #555C6A;
+}
+.LeaveApplicationForm textarea{
+    font-size: 13px;
+    padding: 8px;
+    min-height: 75px;
+    border: 1px solid #555C6A;
+    border-radius: 4px;
+}
+.LeaveApplicationForm input{
+    font-size: 12px;
+    padding: 5px;
+}
+.SubmitLeaveButton{
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #2E76FA;
+    color: white;
+    border: none;
+    width: 125px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+/* Tablets & Small Laptops */
+@media (max-width: 1024px) {
+    .ContentArea {
+        gap: 20px;
+    }
+
+    .ProfileSection {
+        flex-wrap: wrap;
+        justify-content: center;
         text-align: center;
     }
-    .Sidebar{
-        font-size: 10px;
+
+    .AttendanceTable {
+        width: 100%;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+
+    .Navbar {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .ContentArea {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .Sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+        padding: 15px 5px;
+        gap: 15px;
+    }
+    .SidebarOption {
+        margin-bottom: 0;
+    }
+    .SidebarLink {
+        font-size: 12px;
+        padding: 8px 12px;
+        display: inline-block;
+    }
+
+    .ProfileSection {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .ProfileImage {
+        width: 100px;
+        height: 100px;
+    }
+    .InfoContainer {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    .EditProfileButton {
+        margin: 15px 0 0 0;
+    }
+
+    .OverviewSection {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .OverviewSectionText {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .AttendanceTable {
+        width: 100%;
+        font-size: 11px;
+    }
+    .AttendanceTable th,
+    .AttendanceTable td {
+        padding: 5px;
+    }
+    .LeaveApplicationForm input,
+    .LeaveApplicationForm textarea {
+        width: 100%;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+
+    .Navbar {
+        padding: 10px;
+    }
+
+    .SidebarLink {
+        font-size: 11px;
+    }
+
+    .StudentName {
+        font-size: 18px;
+    }
+
+    .OverviewSectionTitle,
+    .AttendanceLogsTitle,
+    .LeaveApplicationTitle {
+        font-size: 16px;
+    }
+
+    .SubmitLeaveButton {
+        width: 100%;
     }
 }

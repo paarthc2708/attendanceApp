@@ -31,10 +31,10 @@
                         <a class="SidebarLink" href="#Overview"><i class="fa-solid fa-chart-line"></i> Overview</a>
                     </div>
                     <div class="SidebarOption">
-                        <a class="SidebarLink"><i class="fa-solid fa-calendar-days"></i> Attendance Logs</a>
+                        <a class="SidebarLink" href="#AttendanceLogs"><i class="fa-solid fa-calendar-days"></i> Attendance Logs</a>
                     </div>
                     <div class="SidebarOption">
-                        <a class="SidebarLink"><i class="fa-solid fa-envelopes-bulk"></i> Leave Application</a>
+                        <a class="SidebarLink" href="#LeaveApplication"><i class="fa-solid fa-envelopes-bulk"></i> Leave Application</a>
                     </div>
                     <div class="SidebarOption">
                         <a class="SidebarLink"><i class="fa-solid fa-gear"></i> Settings</a>
@@ -66,9 +66,69 @@
                             <p class="OverviewText">Attendance Percentage: 90%</p>
                         </div>
                         <div class="OverviewChartContainer">
-                            <div class="PresentBar Bar"></div>
-                            <div class="AbsentBar Bar"></div>
+                            <div class="OverviewChartBars">
+                                <div class="PresentBar Bar"></div>
+                                <div class="AbsentBar Bar"></div>
+                            </div>
+                            <p class="AttendanceOverview">You are in <span class="GreenZone">GREEN ZONE</span>.</p>
                         </div>
+                    </div>
+                    <div class="AttendanceLogsSection" id="AttendanceLogs">
+                        <h3 class="AttendanceLogsTitle">Attendance Logs</h3>
+                        <table class="AttendanceTable">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead> 
+                            <tbody>
+                                <tr>
+                                    <td>2024-11-06</td>
+                                    <td>Present</td>
+                                    <td>9:00 AM</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-11-05</td>
+                                    <td>Present</td>
+                                    <td>9:00 AM</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-11-04</td>
+                                    <td>Present</td>
+                                    <td>8:50 AM</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-11-03</td>
+                                    <td>Absent</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>2024-11-01</td>
+                                    <td>Present</td>
+                                    <td>9:15 AM</td>
+                                </tr> 
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="LeaveApplicationSection" id="LeaveApplication">
+                        <h3 class="LeaveApplicationTitle">Leave Application</h3>
+                        <form class="LeaveApplicationForm">
+                            <div class="FormGroup">
+                                <label for="leaveDate" class="FormLabel">Date of Leave:</label>
+                                <input type="date" id="leaveDate" class="FormInput">
+                            </div>
+                            <div class="FormGroup">
+                                <label for="leaveReason" class="FormLabel">Reason for Leave:</label>
+                                <textarea id="leaveReason" class="FormTextarea"></textarea>
+                            </div>
+                            <div class="FormGroup">
+                                <label for="photoUpload" class="FormLabel">Upload Supporting Document:</label>
+                                <input type="file" id="photoUpload" class="FormInput">
+                            </div>
+                            <button type="submit" class="SubmitLeaveButton">Submit Application</button>
+                        </form>
                     </div>
                 </div>
             </div>
