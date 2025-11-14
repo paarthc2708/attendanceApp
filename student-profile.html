@@ -28,7 +28,13 @@
                         <a class="SidebarLink" href="#Profile"><i class="fa-solid fa-user"></i> Profile</a>
                     </div>
                     <div class="SidebarOption">
+                        <a class="SidebarLink" href="#Overview"><i class="fa-solid fa-chart-line"></i> Overview</a>
+                    </div>
+                    <div class="SidebarOption">
                         <a class="SidebarLink"><i class="fa-solid fa-calendar-days"></i> Attendance Logs</a>
+                    </div>
+                    <div class="SidebarOption">
+                        <a class="SidebarLink"><i class="fa-solid fa-envelopes-bulk"></i> Leave Application</a>
                     </div>
                     <div class="SidebarOption">
                         <a class="SidebarLink"><i class="fa-solid fa-gear"></i> Settings</a>
@@ -37,11 +43,35 @@
                         <a class="SidebarLink"><i class="fa-solid fa-file-export"></i> Export Data</a>
                     </div>
                 </nav>
-                <div class="ProfileSection" id="Profile">
-                    <div class="ImageContainer">
-                        <img class="ProfileImage" src="ProfilePicture.jpeg" alt="Profile Picture">
+                <div class="CenterTextArea">
+                    <div class="ProfileSection" id="Profile">
+                        <div class="ImageContainer">
+                            <img class="ProfileImage" src="ProfilePicture.jpeg" alt="Profile Picture">
+                        </div>
+                        <div class="InfoContainer">
+                            <h2 class="StudentName">Paarth Chhattani</h2>
+                            <p class="StudentDetails"><strong>Student ID:</strong> 123456789</p>
+                            <p class="StudentDetails"><strong>Course:</strong> Bachelor of Technology in Computer Science</p>
+                            <p class="StudentDetails"><strong>Email:</strong> paarthchhattani2708@gmail.com</p>
+                        </div>
+                        <div class="ButtonContainer">
+                            <button class="EditProfileButton">Edit Profile</button>
+                        </div>
+                    </div>
+                    <div class="OverviewSection" id="Overview">
+                        <div class="OverviewSectionText">
+                            <h3 class="OverviewSectionTitle">Attendance Overview</h3>
+                            <p class="OverviewText">Total Classes Attended: 45</p>
+                            <p class="OverviewText">Total Classes Missed: 5</p>
+                            <p class="OverviewText">Attendance Percentage: 90%</p>
+                        </div>
+                        <div class="OverviewChartContainer">
+                            <div class="PresentBar Bar"></div>
+                            <div class="AbsentBar Bar"></div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
     </body>
 </html>
