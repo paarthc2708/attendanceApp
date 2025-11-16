@@ -4,14 +4,13 @@ async function generatePDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    // ---- Extract Text Data ----
+    // === EXTRACT DATA FROM HTML ===
     const name = document.getElementById("StudentName")?.innerText || "";
     const id = document.getElementById("StudentID")?.innerText || "";
     const course = document.getElementById("StudentCourse")?.innerText || "";
     const email = document.getElementById("StudentEmail")?.innerText || "";
     const overview = document.getElementById("Overview")?.innerText || "";
 
-    // ---- Extract Image (ProfileImage) ----
     const imgElement = document.getElementById("ProfileImage");
     let imgData = null;
 
@@ -19,41 +18,47 @@ async function generatePDF() {
         imgData = await convertImageToBase64(imgElement.src);
     }
 
-    // ---- PDF TITLE ----
+    // === TITLE ===
     doc.setFontSize(18);
     doc.text("Student Report", 14, 20);
 
-    // ---- Add Profile Image ----
+    // === ADD PROFILE IMAGE ===
     if (imgData) {
-        doc.addImage(imgData, "JPEG", 150, 10, 40, 40);  // x, y, width, height
+        doc.addImage(imgData, "JPEG", 150, 10, 40, 40);
     }
 
-    // ---- Add Student Info ----
+    // === ADD STUDENT DETAILS ===
     doc.setFontSize(12);
-    doc.text(name, 14, 40);
-    doc.text(id, 14, 48);
-    doc.text(course, 14, 56);
-    doc.text(email, 14, 64);
+    let y = 40;
 
-    // ---- Overview Section ----
+    doc.text(name, 14, y); y += 8;
+    doc.text(id, 14, y); y += 8;
+    doc.text(course, 14, y); y += 8;
+    doc.text(email, 14, y); y += 12;
+
+    // === OVERVIEW SECTION ===
     doc.setFontSize(14);
-    doc.text("Overview", 14, 80);
+    doc.text("Overview", 14, y);
+    y += 8;
 
     doc.setFontSize(12);
-    doc.text(doc.splitTextToSize(overview, 180), 14, 88);
+    const wrapped = doc.splitTextToSize(overview, 180);
+    doc.text(wrapped, 14, y);
+    y += wrapped.length * 6 + 10;
 
-    // ---- Add Attendance Table ----
+    // === ADD HTML TABLE EXACTLY AS IT IS ===
     doc.autoTable({
-        html: "#attendanceTable",
-        startY: doc.lastAutoTable ? doc.lastAutoTable.finalY + 20 : 115,
+        html: "#AttendanceTable",  // YOUR HTML TABLE
+        startY: y,
         theme: "striped",
         headStyles: { fillColor: [46, 118, 250] }
     });
 
+    // Save PDF
     doc.save("Student_Report.pdf");
 }
 
-// ========== Helper: Convert Image URL to Base64 ==========
+// HELPER: Convert image from <img> to Base64
 function convertImageToBase64(url) {
     return new Promise((resolve) => {
         const img = new Image();

@@ -40,19 +40,19 @@
                         <a class="SidebarLink"><i class="fa-solid fa-gear"></i> Settings</a>
                     </div>
                     <div class="SidebarOption">
-                        <a class="SidebarLink"><i class="fa-solid fa-file-export"></i> Export Data</a>
+                        <a class="SidebarLink" id="exportPDF" href="#"><i class="fa-solid fa-file-export"></i> Export Data</a>
                     </div>
                 </nav>
                 <div class="CenterTextArea">
                     <div class="ProfileSection" id="Profile">
                         <div class="ImageContainer">
-                            <img class="ProfileImage" src="ProfilePicture.jpeg" alt="Profile Picture">
+                            <img class="ProfileImage" id="ProfileImage" src="ProfilePicture.jpeg" alt="Profile Picture">
                         </div>
                         <div class="InfoContainer">
-                            <h2 class="StudentName">Paarth Chhattani</h2>
-                            <p class="StudentDetails"><strong>Student ID:</strong> 123456789</p>
-                            <p class="StudentDetails"><strong>Course:</strong> Bachelor of Technology in Computer Science</p>
-                            <p class="StudentDetails"><strong>Email:</strong> paarthchhattani2708@gmail.com</p>
+                            <h2 class="StudentName" id="StudentName">Paarth Chhattani</h2>
+                            <p class="StudentDetails" id="StudentID"><strong>Student ID:</strong> 123456789</p>
+                            <p class="StudentDetails" id="StudentCourse"><strong>Course:</strong> Bachelor of Technology in Computer Science</p>
+                            <p class="StudentDetails" id="StudentEmail"><strong>Email:</strong> paarthchhattani2708@gmail.com</p>
                         </div>
                         <div class="ButtonContainer">
                             <button class="EditProfileButton">Edit Profile</button>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="AttendanceLogsSection" id="AttendanceLogs">
                         <h3 class="AttendanceLogsTitle">Attendance Logs</h3>
-                        <table class="AttendanceTable">
+                        <table class="AttendanceTable" id="AttendanceTable">
                             <thead>
                                 <tr>
                                     <th>Date</th>
@@ -114,42 +114,30 @@
                     </div>
                     <div class="LeaveApplicationSection" id="LeaveApplication">
                         <h3 class="LeaveApplicationTitle">Leave Application</h3>
-                        <form class="LeaveApplicationForm">
+                        <form class="LeaveApplicationForm" id="leaveForm" enctype="multipart/form-data">
                             <div class="FormGroup">
                                 <label for="leaveDate" class="FormLabel">Date of Leave:</label>
-                                <input type="date" id="leaveDate" class="FormInput">
+                                <input type="date" id="leaveDate" name="leaveDate" class="FormInput">
                             </div>
                             <div class="FormGroup">
                                 <label for="leaveReason" class="FormLabel">Reason for Leave:</label>
-                                <textarea id="leaveReason" class="FormTextarea"></textarea>
+                                <textarea id="leaveReason" name="leaveReason" class="FormTextarea"></textarea>
                             </div>
                             <div class="FormGroup">
                                 <label for="photoUpload" class="FormLabel">Upload Supporting Document:</label>
-                                <input type="file" id="photoUpload" class="FormInput">
+                                <input type="file" id="photoUpload" name="photoUpload" class="FormInput">
                             </div>
                             <button type="submit" class="SubmitLeaveButton">Submit Application</button>
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+        <script src="download-report.js"></script>
+        <script src="leave-form.js"></script>
 
-        <!-- Chatbot UI -->
-        <div id="chatbot-btn" class="chatbot-btn">
-            <i class="fa-solid fa-comments"></i>
-        </div>
-        <div id="chatbot-box" class="chatbot-box">
-            <div class="chatbot-header">
-                <span>Chatbot</span>
-                <button id="chatbot-close" class="chatbot-close">&times;</button>
-            </div>
-            <div id="chatbot-messages" class="chatbot-messages"></div>
-            <div class="chatbot-input-area">
-                <input type="text" id="chatbot-input" placeholder="Type your message...">
-                <button id="chatbot-send">Send</button>
-            </div>
-        </div>
-
-        <script src="chatbot.js"></script>
     </body>
 </html>
